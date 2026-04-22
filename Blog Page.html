@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Page</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+}
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 395px;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  background: linear-gradient(90deg, #5135f2 0%, #4f31ed 45%, #593af6 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero-content h1 {
+  margin: 0 0 16px;
+  font-size: 66px;
+  line-height: 1.08;
+  font-weight: 700;
+  color: #fff;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.breadcrumb a,
+.breadcrumb span {
+  color: #fff;
+  text-decoration: none;
+}
+
+.breadcrumb a.active {
+  text-decoration: underline;
+}
+
+.hero-shape {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-dots-left {
+  top: 100px;
+  left: 92px;
+  width: 72px;
+  height: 52px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.9) 1.7px, transparent 1.7px);
+  background-size: 8px 8px;
+}
+
+.hero-arrow {
+  left: 72px;
+  bottom: 118px;
+  width: 0;
+  height: 0;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 18px solid #ffffff;
+}
+
+.hero-cross {
+  left: 56.5%;
+  top: 232px;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero-dots-center {
+  left: 58%;
+  top: 240px;
+  width: 54px;
+  height: 54px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.9) 1.6px, transparent 1.6px);
+  background-size: 8px 8px;
+}
+
+.hero-circle {
+  top: 78px;
+  right: 315px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #11d2ff 0 5px,
+    transparent 5px 14px
+  );
+}
+
+.hero-wave {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.18;
+  background:
+    radial-gradient(circle at 10% 100%, transparent 0 150px, rgba(255,255,255,0.16) 151px 153px, transparent 154px),
+    radial-gradient(circle at 20% 100%, transparent 0 230px, rgba(255,255,255,0.14) 231px 233px, transparent 234px),
+    radial-gradient(circle at 32% 100%, transparent 0 320px, rgba(255,255,255,0.13) 321px 323px, transparent 324px),
+    radial-gradient(circle at 46% 100%, transparent 0 420px, rgba(255,255,255,0.12) 421px 423px, transparent 424px),
+    radial-gradient(circle at 62% 100%, transparent 0 530px, rgba(255,255,255,0.11) 531px 533px, transparent 534px),
+    radial-gradient(circle at 80% 100%, transparent 0 660px, rgba(255,255,255,0.10) 661px 663px, transparent 664px),
+    radial-gradient(circle at 100% 20%, transparent 0 250px, rgba(255,255,255,0.08) 251px 253px, transparent 254px);
+}
+
+@media (max-width: 1199px) {
+  .page-hero {
+    padding: 0 6%;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+  }
+
+  .breadcrumb {
+    font-size: 20px;
+  }
+
+  .hero-circle {
+    right: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-hero {
+    min-height: 300px;
+    padding: 0 24px;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .breadcrumb {
+    font-size: 17px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .hero-circle {
+    width: 120px;
+    height: 120px;
+    top: 40px;
+    right: 20px;
+  }
+
+  .hero-dots-left,
+  .hero-dots-center,
+  .hero-cross,
+  .hero-arrow {
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+}
+
+
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #ffffff 0 60%, #f8f6fd 60% 100%);
+}
+
+.newsletter-cta {
+  padding: 36px 18px 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: #0c1234;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.blog-layout-section,
+.image-consult-section {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 40px 20px 0;
+}
+
+/* common two-column alignment */
+.blog-layout,
+.blog-subsection-wrap,
+.image-consult-wrap,
+.blog-tags-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) 420px;
+  gap: 70px;
+  align-items: start;
+}
+
+/* top image + sidebar */
+.blog-main-image img,
+.consult-image img,
+.blog-image-card img,
+.blog-image-wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* sidebar */
+.blog-sidebar,
+.recent-news-box,
+.popular-tags-box,
+.consult-box {
+  width: 100%;
+}
+
+.sidebar-widget,
+.recent-news-box,
+.popular-tags-box {
+  margin-bottom: 55px;
+}
+
+.sidebar-widget h3,
+.recent-news-box h3,
+.popular-tags-box h3 {
+  margin: 0 0 18px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0c1234;
+}
+
+.title-line,
+.section-line,
+.tag-line {
+  display: inline-block;
+  width: 68px;
+  height: 4px;
+  background: #5a38f5;
+  margin-bottom: 28px;
+}
+
+.search-form {
+  position: relative;
+}
+
+.search-form input {
+  width: 100%;
+  height: 74px;
+  border: 1px solid #e9e9f5;
+  padding: 0 65px 0 24px;
+  font-size: 18px;
+  outline: none;
+}
+
+.search-form button {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #5a38f5;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.category-list,
+.recent-news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li {
+  margin-bottom: 24px;
+}
+
+.category-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  color: #0c1234;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.category-list a span {
+  position: relative;
+  padding-left: 20px;
+}
+
+.category-list a span::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-52%);
+  font-size: 24px;
+  color: #666b88;
+}
+
+.category-list a strong {
+  color: #5f6484;
+  font-weight: 500;
+}
+
+.recent-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.recent-news-item {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.recent-news-item img {
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+}
+
+.recent-news-content h4 {
+  margin: 0 0 8px;
+  color: #0c1234;
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.recent-news-content span {
+  color: #5f6484;
+  font-size: 16px;
+}
+
+/* meta */
+.blog-meta,
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin: 28px 0 22px;
+}
+
+.blog-meta span,
+.post-meta span {
+  position: relative;
+  padding-right: 18px;
+  color: #5f6484;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.blog-meta span:not(:last-child)::after,
+.post-meta span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 2px;
+  height: 20px;
+  background: #ece8ff;
+  transform: translateY(-50%);
+}
+
+/* left content blocks */
+.blog-feature-card,
+.blog-post-preview,
+.post-subsection__content {
+  max-width: 100%;
+}
+
+.blog-feature-card h2,
+.blog-post-preview h2,
+.image-consult-section > h2,
+.post-subsection__content h2 {
+  margin: 0 0 22px;
+  color: #0c1234;
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.blog-feature-card p,
+.blog-post-preview p,
+.image-consult-section > p,
+.post-subsection__content p {
+  margin: 0 0 32px;
+  color: #5f6484;
+  font-size: 18px;
+  line-height: 1.9;
+  max-width: 980px;
+}
+
+.read-more-btn,
+.read-btn,
+.post-subsection__button,
+.image-consult-section > .read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 30px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #5a38f5 0%, #4e33ea 100%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* consult card */
+.consult-box {
+  position: relative;
+  overflow: hidden;
+  min-height: 520px;
+  padding: 36px 32px 0;
+  background: linear-gradient(180deg, #5b39f5 0%, #5134ef 100%);
+  color: #fff;
+}
+
+.consult-box h3 {
+  margin: 0 0 24px;
+  font-size: 30px;
+  line-height: 1.18;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.consult-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: #fff;
+  color: #1d2033;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.consult-phone {
+  display: inline-block;
+  margin-top: 24px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: underline;
+  position: relative;
+  z-index: 2;
+}
+
+.consult-person {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  width: 280px;
+  z-index: 2;
+}
+
+.consult-dots {
+  position: absolute;
+  top: 46px;
+  right: 42px;
+  width: 64px;
+  height: 64px;
+  background-image: radial-gradient(rgba(255,255,255,0.9) 1.8px, transparent 1.8px);
+  background-size: 8px 8px;
+}
+
+.consult-rings {
+  position: absolute;
+  left: -120px;
+  bottom: -100px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 0 0 80px rgba(255,255,255,0.03),
+    0 0 0 160px rgba(255,255,255,0.02);
+}
+
+.consult-circle {
+  position: absolute;
+  left: 44px;
+  bottom: 22px;
+  width: 20px;
+  height: 20px;
+  border: 5px solid #ff7a00;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* tags */
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tags-list a {
+  padding: 10px 16px;
+  border-radius: 6px;
+  background: #f1efff;
+  color: #0c1234;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* stacked single-column blocks inside second section */
+.blog-image-card,
+.blog-image-wrap,
+.post-subsection__content,
+.image-consult-section > h2,
+.image-consult-section > p,
+.image-consult-section > .read-more-btn,
+.image-consult-section > .blog-meta {
+  max-width: 995px;
+}
+
+.blog-image-card,
+.blog-image-wrap,
+.post-subsection__content {
+  margin-top: 55px;
+}
+
+.image-consult-section > h2,
+.image-consult-section > p,
+.image-consult-section > .read-more-btn,
+.image-consult-section > .blog-meta {
+  margin-left: 0;
+}
+
+/* responsive */
+@media (max-width: 1199px) {
+  .blog-layout,
+  .blog-subsection-wrap,
+  .image-consult-wrap,
+  .blog-tags-wrap {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 40px;
+  }
+
+  .blog-feature-card h2,
+  .blog-post-preview h2,
+  .image-consult-section > h2,
+  .post-subsection__content h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 991px) {
+  .blog-layout,
+  .blog-subsection-wrap,
+  .image-consult-wrap,
+  .blog-tags-wrap {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .consult-box {
+    min-height: 480px;
+  }
+
+  .consult-person {
+    width: 240px;
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-layout-section,
+  .image-consult-section {
+    padding: 24px 15px 0;
+  }
+
+  .blog-feature-card h2,
+  .blog-post-preview h2,
+  .image-consult-section > h2,
+  .post-subsection__content h2 {
+    font-size: 28px;
+  }
+
+  .blog-feature-card p,
+  .blog-post-preview p,
+  .image-consult-section > p,
+  .post-subsection__content p {
+    font-size: 16px;
+  }
+
+  .read-more-btn,
+  .read-btn,
+  .post-subsection__button,
+  .image-consult-section > .read-more-btn {
+    font-size: 16px;
+    padding: 15px 22px;
+  }
+
+  .search-form input {
+    height: 62px;
+    font-size: 16px;
+  }
+}
+
+
+.newsletter-card {
+  max-width: 1580px;
+  margin: 0 auto;
+  min-height: 495px;
+  padding: 62px 70px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #5437f4 0%, #4f32ec 100%);
+}
+
+.newsletter-content {
+  width: 48%;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.newsletter-badge {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-bottom: 28px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.newsletter-content h2 {
+  margin: 0 0 34px;
+  max-width: 690px;
+  color: #fff;
+  font-size: 58px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.newsletter-form {
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 34px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 18px 24px;
+  color: #7b7b7b;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.newsletter-form button {
+  border: none;
+  min-width: 152px;
+  padding: 20px 28px;
+  border-radius: 6px;
+  background: #17132b;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.newsletter-form button span {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.newsletter-options {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.newsletter-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.newsletter-option input {
+  display: none;
+}
+
+.option-circle {
+  width: 30px;
+  height: 30px;
+  border: 1.8px solid rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.newsletter-option.active .option-circle::after,
+.newsletter-option input:checked + .option-circle::after {
+  content: "✓";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.option-text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.newsletter-illustration {
+  position: absolute;
+  right: 10px;
+  bottom: -36px;
+  width: 50%;
+  height: 110%;
+  z-index: 1;
+}
+
+.newsletter-illustration img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  object-fit: contain;
+}
+
+.shape-circle {
+  position: absolute;
+  right: 195px;
+  top: 120px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #11d2ff 0 5px,
+    transparent 5px 14px
+  );
+  opacity: 0.95;
+}
+
+.shape-dots {
+  position: absolute;
+  left: 120px;
+  bottom: 90px;
+  width: 88px;
+  height: 88px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.95) 2px, transparent 2px);
+  background-size: 16px 16px;
+}
+
+@media (max-width: 1399px) {
+  .newsletter-card {
+    padding: 50px 40px;
+  }
+
+  .newsletter-content h2 {
+    font-size: 48px;
+  }
+
+  .newsletter-illustration {
+    width: 48%;
+    right: -20px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .newsletter-content {
+    width: 55%;
+  }
+
+  .newsletter-content h2 {
+    font-size: 42px;
+  }
+
+  .newsletter-illustration {
+    width: 42%;
+    top: 0;
+    bottom: 0;
+  }
+
+  .shape-circle {
+    width: 160px;
+    height: 160px;
+    right: 100px;
+    top: 105px;
+  }
+}
+
+@media (max-width: 991px) {
+  .newsletter-card {
+    display: block;
+    min-height: auto;
+    padding: 42px 25px;
+  }
+
+  .newsletter-content {
+    width: 100%;
+  }
+
+  .newsletter-content h2 {
+    font-size: 38px;
+  }
+
+  .newsletter-form {
+    max-width: 100%;
+  }
+
+  .newsletter-illustration {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    right: auto;
+    bottom: auto;
+    margin-top: 30px;
+  }
+
+  .newsletter-illustration img {
+    max-width: 520px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .shape-circle {
+    right: 50%;
+    top: 60px;
+    transform: translateX(120px);
+  }
+
+  .shape-dots {
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-120px);
+  }
+}
+
+@media (max-width: 767px) {
+  .newsletter-cta {
+    padding: 20px 10px 30px;
+  }
+
+  .newsletter-card {
+    padding: 32px 18px;
+  }
+
+  .newsletter-badge {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  .newsletter-content h2 {
+    font-size: 31px;
+    line-height: 1.2;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .newsletter-form button {
+    min-width: 100%;
+    padding: 18px 20px;
+  }
+
+  .newsletter-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .newsletter-illustration {
+    height: 270px;
+  }
+
+  .newsletter-illustration img {
+    max-width: 360px;
+  }
+
+  .shape-circle {
+    width: 120px;
+    height: 120px;
+    transform: translateX(90px);
+  }
+
+  .shape-dots {
+    width: 70px;
+    height: 70px;
+    background-size: 14px 14px;
+    transform: translateX(-90px);
+  }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+      <header class="site-header">
+    <div class="topbar">
+      <p>Welcome to Sland a Modern Saaslanding Template</p>
+    </div>
+
+    <div class="shell navbar">
+      <a href="#" class="brand">
+        <span class="brand-mark"></span>
+        <img
+        src="https://wpriverthemes.com/HTML/sland/assets/images/logos/logo.png"
+        alt="Newsletter Illustration"
+      >
+      </a>
+
+      <nav class="nav-menu">
+  <a href="/Home.html">Home</a>
+
+
+  <a href="/about page.html">About</a>
+
+  <a href="/Project.html" >Project</a>
+
+  <a href="/Blog Page.html" class="active">Blog</a>
+
+  <!-- <a href="Page.html"></a> -->
+
+  <a href="/Service Page.html">Page</a>
+
+
+
+  
+
+  <a href="/ContactPage.html">Contact</a>
+
+
+  
+</nav>
+
+      <div class="nav-actions">
+        <a href="#" class="search-btn">🔍</a>
+        <a href="#" class="lang-btn">English</a>
+        <a href="#" class="btn btn-primary">Get Started →</a>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero">
+  <div class="hero-shape hero-dots-left"></div>
+  <div class="hero-shape hero-arrow"></div>
+  <div class="hero-shape hero-cross">+</div>
+  <div class="hero-shape hero-dots-center"></div>
+  <div class="hero-shape hero-circle"></div>
+  <div class="hero-wave"></div>
+
+  <div class="hero-content">
+    <h1>Blog Standard</h1>
+    <div class="breadcrumb">
+      <a href="#">Home</a>
+      <span>&rsaquo;</span>
+      <a href="#" class="active">Blog Standard</a>
+    </div>
+  </div>
+</section>
+
+<section class="blog-layout-section">
+  <div class="blog-layout">
+    <div class="blog-main-image">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/blog/blog-standard1.jpg" alt="Person working on laptop">
+    </div>
+
+    <aside class="blog-sidebar">
+      <div class="sidebar-widget">
+        <h3>Search</h3>
+        <form class="search-form">
+          <input type="text" placeholder="Keywords">
+          <button type="submit">&#128269;</button>
+        </form>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>Category</h3>
+        <span class="title-line"></span>
+
+        <ul class="category-list">
+          <li><a href="#"><span>SAAS Landing</span><strong>(2)</strong></a></li>
+          <li><a href="#"><span>App Landing Pages</span><strong>(5)</strong></a></li>
+          <li><a href="#"><span>Web Design Solutions</span><strong>(5)</strong></a></li>
+          <li><a href="#"><span>WordPress Development</span><strong>(3)</strong></a></li>
+          <li><a href="#"><span>Digital Marketing</span><strong>(7)</strong></a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="blog-subsection-wrap">
+    <article class="blog-feature-card">
+      <div class="blog-meta">
+        <span>25 Feb 2022</span>
+        <span>Comments (05)</span>
+        <span>Share (5k)</span>
+      </div>
+
+      <h2>Everything You Want To Know About Creating Voice User Interfaces</h2>
+
+      <p>
+        Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+        gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+      </p>
+
+      <a href="#" class="read-more-btn">Read More <span>&rarr;</span></a>
+    </article>
+
+    <aside class="recent-news-box">
+      <h3>Recent News</h3>
+      <span class="section-line"></span>
+
+      <div class="recent-news-list">
+        <a href="#" class="recent-news-item">
+          <img src="https://wpriverthemes.com/HTML/sland/assets/images/widgets/news1.jpg" alt="Recent news image">
+          <div class="recent-news-content">
+            <h4>Everything You Want To Know About Creating</h4>
+            <span>25 Feb 2022</span>
+          </div>
+        </a>
+
+        <a href="#" class="recent-news-item">
+          <img src="https://wpriverthemes.com/HTML/sland/assets/images/widgets/news2.jpg" alt="Recent news image">
+          <div class="recent-news-content">
+            <h4>Everything You Want To Know About Creating</h4>
+            <span>25 Feb 2022</span>
+          </div>
+        </a>
+
+        <a href="#" class="recent-news-item">
+          <img src="https://wpriverthemes.com/HTML/sland/assets/images/widgets/news3.jpg" alt="Recent news image">
+          <div class="recent-news-content">
+            <h4>Everything You Want To Know About Creating</h4>
+            <span>25 Feb 2022</span>
+          </div>
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="image-consult-section">
+  <div class="image-consult-wrap">
+    <div class="consult-image">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/blog/blog-standard2.jpg" alt="Team meeting">
+    </div>
+
+    <div class="consult-box">
+      <div class="consult-dots"></div>
+      <div class="consult-rings"></div>
+      <span class="consult-circle"></span>
+
+      <h3>Need Any<br>Consultation</h3>
+
+      <a href="#" class="consult-btn">Contact Us <span>&rsaquo;</span></a>
+
+      <a href="tel:+01234567899" class="consult-phone">+0123 (456) 7899</a>
+
+      <img
+        class="consult-person"
+        src="https://wpriverthemes.com/HTML/sland/assets/images/widgets/call-to-action.png"
+        alt="Consultation support"
+      >
+    </div>
+  </div>
+
+  <div class="blog-tags-wrap">
+    <article class="blog-post-preview">
+      <div class="post-meta">
+        <span>25 Feb 2022</span>
+        <span>Comments (05)</span>
+        <span>Share (5k)</span>
+      </div>
+
+      <h2>Web Frameworks Solvowe Sithout Them Part Designing Better Links</h2>
+
+      <p>
+        Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+        gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+      </p>
+
+      <a href="#" class="read-btn">Read More <span>&rarr;</span></a>
+    </article>
+
+    <aside class="popular-tags-box">
+      <h3>Popular Tags</h3>
+      <span class="tag-line"></span>
+
+      <div class="tags-list">
+        <a href="#">SAAS</a>
+        <a href="#">Web Design</a>
+        <a href="#">Graphics</a>
+        <a href="#">Development</a>
+        <a href="#">Landing Pages</a>
+        <a href="#">UX/UI Design</a>
+        <a href="#">WordPress</a>
+      </div>
+    </aside>
+  </div>
+
+  <div class="blog-image-card">
+    <img src="https://wpriverthemes.com/HTML/sland/assets/images/blog/blog-standard3.jpg" alt="Blog featured image">
+
+    <div class="blog-meta">
+      <span>25 Feb 2022</span>
+      <span>Comments (05)</span>
+      <span>Share (5k)</span>
+    </div>
+  </div>
+  <h2>Everything You Want To Know About Creating Voice User Interfaces</h2>
+
+  <p>
+    Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+    gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+  </p>
+
+  <a href="#" class="read-more-btn">Read More <span>&rarr;</span></a>
+
+  <div class="blog-image-wrap">
+    <img src="https://wpriverthemes.com/HTML/sland/assets/images/blog/blog-standard4.jpg" alt="Business people standing by window">
+  </div>
+
+  <div class="blog-meta">
+    <span>25 Feb 2022</span>
+    <span>Comments (05)</span>
+    <span>Share (5k)</span>
+  </div>
+  
+  <div class="post-subsection__content">
+    <h2>Web Frameworks Solvowe Sithout Them Part Designing Better Links</h2>
+    <p>
+      Dorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+      gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+    </p>
+    <a href="#" class="post-subsection__button">
+      Read More
+      <span>&rarr;</span>
+    </a>
+  </div>
+
+</section>   
+
+<section class="newsletter-cta">
+  <div class="newsletter-card">
+    <div class="newsletter-content">
+      <span class="newsletter-badge">Our Newsletter</span>
+
+      <h2>Subscribe Our Newsletter to Get More Updates</h2>
+
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter Email Address">
+        <button type="submit">Sign up <span>&rsaquo;</span></button>
+      </form>
+
+      <div class="newsletter-options">
+        <label class="newsletter-option active">
+          <input type="radio" name="updates" checked>
+          <span class="option-circle"></span>
+          <span class="option-text">Wekly Updates</span>
+        </label>
+
+        <label class="newsletter-option">
+          <input type="radio" name="updates">
+          <span class="option-circle"></span>
+          <span class="option-text">Monthly Updates</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="newsletter-illustration">
+      <div class="shape-circle"></div>
+      <div class="shape-dots"></div>
+
+      <img
+        src="https://wpriverthemes.com/HTML/sland/assets/images/newsletter/newsletter.png"
+        alt="Newsletter illustration"
+      >
+    </div>
+  </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sland SaaS Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-purple: #5e4ae3;
+            --primary-dark: #121127;
+            --text-main: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fc;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Typography & Components */
+        h2 { font-size: 36px; color: #0b1c39; margin: 15px 0; line-height: 1.2; }
+        .badge { background: #f0eeff; color: var(--primary-purple); padding: 5px 15px; border-radius: 4px; font-size: 13px; font-weight: 700; display: inline-block; text-transform: uppercase; }
+
+        /* Header & Navigation */
+        .topbar { background: var(--primary-purple); color: white; text-align: center; padding: 10px; font-size: 14px; font-weight: 300; }
+        .navbar { padding: 20px 0; background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; max-width: 1300px; margin: 0 auto; padding: 0 40px; }
+        .nav-menu { display: flex; list-style: none; gap: 25px; }
+        .nav-menu a { text-decoration: none; color: #444; font-weight: 500; font-size: 15px; transition: 0.3s; }
+        .nav-menu a.active, .nav-menu a:hover { color: var(--primary-purple); }
+        .nav-actions { display: flex; align-items: center; gap: 20px; }
+        .get-started { background: #f0eeff; color: var(--primary-purple); padding: 10px 22px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+
+        /* Hero Banner */
+        .hero-banner { background: var(--primary-purple); height: 380px; display: flex; align-items: center; justify-content: center; position: relative; color: white; text-align: center; overflow: hidden; }
+        .hero-content { position: relative; z-index: 5; }
+        .hero-banner h1 { font-size: 64px; margin-bottom: 10px; font-weight: 700; }
+        .breadcrumb { font-size: 18px; font-weight: 500; }
+        .breadcrumb a { color: white; text-decoration: none; opacity: 0.7; }
+        .breadcrumb span { margin: 0 10px; }
+        .breadcrumb .curr { opacity: 1; text-decoration: underline; }
+
+        /* Decorative Hero Elements */
+        .decor-circle { position: absolute; right: 10%; top: 15%; width: 200px; height: 200px; border-radius: 50%; background: repeating-linear-gradient(-45deg, rgba(17, 210, 255, 0.2) 0 2px, transparent 2px 12px); }
+        .decor-dots { position: absolute; left: 5%; bottom: 10%; width: 100px; height: 100px; background-image: radial-gradient(white 2px, transparent 2px); background-size: 15px 15px; opacity: 0.3; }
+
+        /* Contact Info & Form Section */
+        .info-form-section { padding: 100px 0; }
+        .flex-box { display: flex; gap: 80px; }
+        .info-side, .form-side { flex: 1; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-top: 45px; }
+        .info-card { display: flex; gap: 18px; align-items: flex-start; }
+        .icon-circle { width: 55px; height: 55px; background: var(--primary-purple); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .info-card h4 { font-size: 18px; color: #0b1c39; margin-bottom: 5px; }
+        .info-card p { color: var(--text-light); font-size: 15px; }
+
+        .compact-form { margin-top: 30px; }
+        .compact-form input, .compact-form textarea { width: 100%; background: var(--bg-light); border: 1px solid #edf0f5; padding: 16px; margin-bottom: 18px; border-radius: 6px; outline: none; font-family: inherit; font-size: 15px; }
+        .compact-form .row { display: flex; gap: 18px; }
+        .btn-purple { background: var(--primary-purple); color: white; border: none; padding: 16px 35px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px; }
+        .btn-purple:hover { background: #4a38cc; transform: translateY(-2px); }
+
+        /* Map Section */
+        .map-section { line-height: 0; }
+        .map-section iframe { filter: grayscale(10%); border: none; }
+
+        /* Newsletter Section */
+        .newsletter-section { padding: 80px 0; }
+        .newsletter-card { background: var(--primary-purple); border-radius: 20px; display: flex; align-items: center; padding: 60px 80px; color: white; position: relative; overflow: hidden; }
+        .news-text { flex: 1.2; z-index: 2; }
+        .news-text h3 { font-size: 42px; margin: 25px 0; font-weight: 700; max-width: 500px; }
+        .badge-alt { background: rgba(255,255,255,0.15); padding: 6px 18px; border-radius: 4px; font-size: 14px; font-weight: 600; }
+        .sub-input-group { background: white; padding: 8px; border-radius: 10px; display: flex; max-width: 480px; margin: 30px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .sub-input-group input { border: none; flex: 1; padding: 12px 15px; outline: none; font-size: 16px; }
+        .sub-input-group button { background: var(--primary-dark); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: 700; transition: 0.3s; }
+        .sub-input-group button:hover { background: #000; }
+        .radio-group { display: flex; gap: 30px; font-size: 15px; }
+        .radio-group label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+        .news-img { flex: 0.8; text-align: right; z-index: 2; position: relative; }
+        .news-img img { width: 120%; margin-bottom: -120px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.2)); }
+
+        /* Footer */
+        .site-footer { background: #fcfcff; padding: 100px 0 30px; border-top: 1px solid #eee; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 50px; }
+        .foot-col h4 { margin-bottom: 30px; color: #0b1c39; font-size: 20px; }
+        .foot-col p { color: var(--text-light); margin-bottom: 15px; font-size: 15px; }
+        .foot-col ul { list-style: none; }
+        .foot-col li { margin-bottom: 15px; font-size: 15px; color: var(--text-light); transition: 0.3s; cursor: pointer; }
+        .foot-col li:hover { color: var(--primary-purple); padding-left: 5px; }
+        .read-more { color: var(--primary-purple); font-weight: 700; text-decoration: none; font-size: 14px; }
+        .copyright { text-align: center; padding-top: 40px; font-size: 14px; color: #999; border-top: 1px solid #eee; margin-top: 60px; }
+
+        /* Floating Scroll Top */
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--primary-purple); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; box-shadow: 0 5px 15px rgba(94,74,227,0.3); font-size: 24px; }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .flex-box { flex-direction: column; gap: 50px; }
+            .hero-banner h1 { font-size: 42px; }
+            .newsletter-card { flex-direction: column; text-align: center; padding: 40px; }
+            .sub-input-group { margin: 30px auto; }
+            .radio-group { justify-content: center; }
+            .news-img img { width: 80%; margin-bottom: 0; margin-top: 40px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+            .compact-form .row { flex-direction: column; gap: 0; }
+            .nav-actions { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="topbar">
+            Welcome to Sland a Modern Saaslanding Template
+        </div>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="brand">
+                    <img src="https://wpriverthemes.com/HTML/sland/assets/images/logos/logo.png" alt="Sland Logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#" class="active">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <span style="cursor:pointer">🔍</span>
+                    <span style="cursor:pointer; font-size:14px; font-weight:500;">English ▾</span>
+                    <a href="#" class="get-started">Get Started →</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <div class="breadcrumb">
+                <a href="#">Home</a> <span>›</span> <a href="#" class="curr">Contact Us</a>
+            </div>
+        </div>
+        <div class="decor-circle"></div>
+        <div class="decor-dots"></div>
+    </section>
+
+    <section class="info-form-section">
+        <div class="container flex-box">
+            <div class="info-side">
+                <span class="badge">Contact Us</span>
+                <h2>We’re Ready to Help You! Say Hello or Contact Us</h2>
+                <p style="color:#666; margin-bottom:20px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quasi architecto.</p>
+                
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="icon-circle">✉</div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>support@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon-circle">📞</div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+012 (345) 67 89</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon-circle">🌐</div>
+                        <div>
+                            <h4>Website</h4>
+                            <p>creativedesign.net</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon-circle">📍</div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>55 Main Street, USA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-side">
+                <span class="badge">Get In Touch</span>
+                <h2>Get Every Single Updates Message us</h2>
+                <form class="compact-form">
+                    <div class="row">
+                        <input type="text" placeholder="Full Name">
+                        <input type="email" placeholder="Email Address">
+                    </div>
+                    <input type="text" placeholder="Website">
+                    <textarea placeholder="Message" rows="5"></textarea>
+                    <button type="submit" class="btn-purple">Send Message →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1650000000000!5m2!1sen!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-card">
+                <div class="news-text">
+                    <span class="badge-alt">Our Newsletter</span>
+                    <h3>Subscribe Our Newsletter to Get More Updates</h3>
+                    <div class="sub-input-group">
+                        <input type="email" placeholder="Enter Email Address">
+                        <button type="submit">Sign up ›</button>
+                    </div>
+                    <div class="radio-group">
+                        <label><input type="radio" name="updates" checked> Weekly Updates</label>
+                        <label><input type="radio" name="updates"> Monthly Updates</label>
+                    </div>
+                </div>
+                <div class="news-img">
+                    <img src="https://wpriverthemes.com/HTML/sland/assets/images/newsletter/newsletter.png" alt="Newsletter Illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="foot-col">
+                <img src="https://wpriverthemes.com/HTML/sland/assets/images/logos/logo.png" alt="Sland" style="margin-bottom:20px;">
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusante doloreue laudantium aperiam eaque abillo inventore.</p>
+                <a href="#" class="read-more">Read More →</a>
+            </div>
+            <div class="foot-col">
+                <h4>About</h4>
+                <ul>
+                    <li>Success History</li>
+                    <li>Meet The Team</li>
+                    <li>Latest News</li>
+                    <li>Need a Career?</li>
+                </ul>
+            </div>
+            <div class="foot-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li>Software Solutions</li>
+                    <li>Web Development</li>
+                    <li>Graphics Design</li>
+                    <li>SEO Optimization</li>
+                </ul>
+            </div>
+            <div class="foot-col">
+                <h4>Get in Touch</h4>
+                <p>📍 55 Main Street, New York</p>
+                <p>✉ support@gmail.com</p>
+                <p>📞 Call : +012 (345) 678</p>
+            </div>
+        </div>
+        <div class="copyright">© 2026 Sland. All rights reserved.</div>
+    </footer>
+
+    <div class="scroll-top">⌃</div>
+
+</body>
+</html>

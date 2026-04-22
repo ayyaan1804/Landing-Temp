@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="header.css">
+<title>Portfolio</title>
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #fff;
+}
+
+/* ================= BANNER ================= */
+.project-banner {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #5b3df5, #3b2bd6);
+  overflow: hidden;
+}
+
+.content {
+  width: 85%;
+  margin: auto;
+}
+
+.project-banner h1 {
+  color: #fff;
+  font-size: 48px;
+}
+
+.breadcrumb {
+  color: #fff;
+}
+
+.breadcrumb a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* shapes */
+.circle-striped {
+  position: absolute;
+  right: 120px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(
+    45deg,
+    #00e5ff,
+    #00e5ff 6px,
+    transparent 6px,
+    transparent 14px
+  );
+}
+
+.dots {
+  position: absolute;
+  left: 60px;
+  top: 50px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(#fff 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+/* ================= PORTFOLIO ================= */
+.portfolio {
+  width: 90%;
+  margin: 60px auto;
+}
+
+/* FILTER */
+.filter-menu {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.filter-menu button {
+  border: none;
+  background: transparent;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 14px;
+}
+
+.filter-menu .active {
+  background: #5a4bff;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* ================= MASONRY GRID ================= */
+.portfolio-grid {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+/* CARD */
+.card {
+  margin-bottom: 20px;
+  break-inside: avoid;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  .portfolio-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    column-count: 1;
+  }
+}
+:root {
+  --primary-bg: #5842f4;
+  --dark-btn: #121217;
+  --text-white: #ffffff;
+  --font-family: 'Inter', sans-serif; /* Use a modern sans-serif */
+}
+
+.newsletter-section {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa; /* Page background */
+}
+
+.newsletter-container {
+  background-color: var(--primary-bg);
+  width: 100%;
+  max-width: 1100px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 60px 80px;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-white);
+  font-family: var(--font-family);
+}
+
+/* --- Left Content Styling --- */
+.newsletter-content {
+  flex: 1.2;
+  z-index: 2;
+}
+
+.newsletter-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 0 0 35px 0;
+  font-weight: 700;
+}
+
+/* --- Form Styling --- */
+.newsletter-form {
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  display: flex;
+  max-width: 450px;
+  margin-bottom: 25px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  padding: 10px 15px;
+  outline: none;
+  font-size: 16px;
+  color: #666;
+}
+
+.newsletter-form button {
+  background: var(--dark-btn);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background: #000;
+}
+
+/* --- Custom Radio Buttons --- */
+.newsletter-options {
+  display: flex;
+  gap: 30px;
+}
+
+.newsletter-options label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.newsletter-options input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-options input[type="radio"]:checked {
+  background-color: #fff;
+}
+
+/* The checkmark/dot inside the radio */
+.newsletter-options input[type="radio"]:checked::after {
+  content: "L"; /* Simple way to mimic checkmark */
+  transform: rotate(45deg) scaleX(-1);
+  color: var(--primary-bg);
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* --- Right Image Styling --- */
+.newsletter-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.newsletter-image img {
+  max-width: 120%; /* Makes it pop out like the design */
+  height: auto;
+  transform: translateY(20px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .newsletter-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+  }
+  .newsletter-form {
+    margin: 0 auto 25px;
+  }
+  .newsletter-options {
+    justify-content: center;
+  }
+  .newsletter-image img {
+  max-width: 100%; /* Change from 120% to 100% to stop overlap */
+  height: auto;
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+  transform: none; /* Remove any translateX or scale that moves it leftward */
+}
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+    <header class="site-header">
+    <div class="topbar">
+      <p>Welcome to Sland a Modern Saaslanding Template</p>
+    </div>
+
+    <div class="shell navbar">
+      <a href="#" class="brand">
+        <span class="brand-mark"></span>
+        <img
+        src="https://wpriverthemes.com/HTML/sland/assets/images/logos/logo.png"
+        alt="Newsletter Illustration"
+      >
+      </a>
+
+      <nav class="nav-menu">
+  <a href="/Home.html">Home</a>
+
+
+  <a href="/about page.html">About</a>
+
+  <a href="/Project.html" class="active">Project</a>
+
+  <a href="/Blog Page.html">Blog</a>
+
+  <!-- <a href="Page.html"></a> -->
+
+  <a href="/Service Page.html">Page</a>
+
+
+
+  
+
+  <a href="/ContactPage.html">Contact</a>
+
+
+  
+</nav>
+
+      <div class="nav-actions">
+        <a href="#" class="search-btn">🔍</a>
+        <a href="#" class="lang-btn">English</a>
+        <a href="#" class="btn btn-primary">Get Started →</a>
+      </div>
+    </div>
+  </header>
+
+<!-- BANNER -->
+<section class="project-banner">
+  <div class="content">
+    <h1>Projects</h1>
+    <div class="breadcrumb">
+      <a href="#">Home</a> › <a href="#">Projects</a>
+    </div>
+  </div>
+
+  <div class="circle-striped"></div>
+  <div class="dots"></div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio">
+
+  <div class="filter-menu">
+    <button class="active">Show All</button>
+    <button>Design</button>
+    <button>Branding</button>
+    <button>Web</button>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project1.jpg">
+    </div>
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project2.jpg">
+    </div>
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project3.jpg">
+    </div>
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project4.jpg">
+    </div>
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project5.jpg">
+    </div>
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project6.jpg">
+    </div>
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project7.jpg">
+    </div>
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project8.jpg">
+    </div>
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project9.jpg">
+    </div>
+
+    <div class="card">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/projects/project10.jpg">
+    </div>
+
+  </div>
+
+</section>
+
+ <section class="newsletter-section">
+  <div class="newsletter-container">
+
+    <!-- Left Content -->
+    <div class="newsletter-content">
+      <span class="newsletter-badge">Our Newsletter</span>
+
+      <h2>
+        Subscribe Our Newsletter<br>
+        to Get More Updates
+      </h2>
+
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter Email Address">
+        <button>Sign up →</button>
+      </div>
+
+      <div class="newsletter-options">
+        <label>
+          <input type="radio" name="plan" checked>
+          <span>Wekly Updates</span>
+        </label>
+
+        <label>
+          <input type="radio" name="plan">
+          <span>Monthly Updates</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="newsletter-image">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/newsletter/newsletter.png" alt="Illustration">
+    </div>
+
+  </div>
+</section>
+</body>
+</html>

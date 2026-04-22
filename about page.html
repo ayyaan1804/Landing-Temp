@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Sland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="header.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    :root {
+  --primary: #5a38f5;
+  --primary-dark: #4e33ea;
+  --text: #0f172a;
+  --muted: #64748b;
+  --bg-soft: #f7f8fc;
+  --line: #e8eaf4;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 18px 40px rgba(18, 24, 40, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #eeebff;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.section-badge.dark {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 28px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: #fff;
+}
+
+.section-heading {
+  margin-bottom: 48px;
+}
+
+.section-heading.center {
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 18px 0 0;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.2;
+}
+
+
+
+/* hero */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary), #4b2ed1);
+  color: #fff;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content h1 {
+  margin: 0 0 12px;
+  font-size: clamp(38px, 6vw, 58px);
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.breadcrumb .current {
+  text-decoration: underline;
+}
+
+.hero-circle {
+  position: absolute;
+  right: 10%;
+  top: 60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 242, 255, 0.85),
+    rgba(0, 242, 255, 0.85) 4px,
+    transparent 4px,
+    transparent 12px
+  );
+}
+
+.hero-dots {
+  position: absolute;
+  left: 5%;
+  top: 80px;
+  width: 64px;
+  height: 64px;
+  background-image: radial-gradient(rgba(255,255,255,0.7) 1.8px, transparent 1.8px);
+  background-size: 10px 10px;
+}
+
+/* about */
+.about-section {
+  padding: 100px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-copy h2 {
+  margin: 18px 0 20px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.2;
+}
+
+.about-copy p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+}
+
+.check-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.about-media {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.about-media-large img {
+  border-radius: 18px;
+}
+
+.about-media-small img {
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 45% 45% 45% 45% / 38% 38% 52% 52%;
+}
+
+/* features */
+.service-features {
+  padding-bottom: 100px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.feature-card {
+  position: relative;
+  padding: 34px 28px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.feature-purple { background: #6a4cff; }
+.feature-yellow { background: #ffbe2e; }
+.feature-orange { background: #ff8c42; }
+.feature-pink { background: #f053a0; }
+
+.feature-number {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  font-size: 46px;
+  font-weight: 700;
+  color: rgba(90, 56, 245, 0.08);
+}
+
+.feature-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* stats */
+.stats-section {
+  padding-bottom: 100px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: linear-gradient(135deg, var(--primary), #3f2bff);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.stat-card {
+  text-align: center;
+  color: #fff;
+  padding: 44px 20px;
+  position: relative;
+}
+
+.stat-card:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: rgba(255,255,255,0.18);
+}
+
+.stat-icon {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #2ec5ff, #3a8bff);
+  font-size: 28px;
+}
+
+.stat-card h3 {
+  margin: 0 0 8px;
+  font-size: 42px;
+}
+
+.stat-card p {
+  margin: 0;
+}
+
+/* team */
+.team-section {
+  padding: 100px 0;
+  background: var(--bg-soft);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-image {
+  position: relative;
+  aspect-ratio: 1 / 1.08;
+  border-radius: 0 100% 100% 100% / 0 50% 50% 50%;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: #fff;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-plus {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border: 4px solid var(--bg-soft);
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.team-card h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* partners */
+.partners-section {
+  padding: 80px 0;
+}
+
+.partners-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.partners-row img {
+  margin: 0 auto;
+  max-height: 42px;
+  width: auto;
+}
+
+/* feedback */
+.feedback-section {
+  padding: 100px 0;
+}
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.feedback-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.feedback-logo {
+  max-height: 38px;
+  width: auto;
+  margin-bottom: 24px;
+}
+
+.feedback-card p {
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.feedback-card strong {
+  color: var(--primary);
+}
+
+.feedback-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.quote-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.feedback-user h4 {
+  margin: 0;
+}
+
+.feedback-user small {
+  color: var(--muted);
+}
+
+/* newsletter */
+.newsletter-section {
+  padding: 100px 0;
+}
+
+.newsletter-box {
+  background: linear-gradient(135deg, #5f3df6, #4a2cd6);
+  border-radius: 20px;
+  padding: 50px 60px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 40px;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.newsletter-content h2 {
+  margin: 18px 0 28px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.2;
+}
+
+.newsletter-form {
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  padding: 18px;
+}
+
+.newsletter-form button {
+  border: 0;
+  background: #11152f;
+  color: #fff;
+  padding: 0 24px;
+  font-weight: 600;
+}
+
+.newsletter-options {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.newsletter-image img {
+  width: 100%;
+}
+
+/* footer */
+.site-footer {
+  background: #f4f5fb;
+  padding: 80px 0 24px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1.1fr;
+  gap: 32px;
+}
+
+.footer-logo {
+  margin-bottom: 18px;
+}
+
+.footer-col h3 {
+  margin: 0 0 18px;
+  color: var(--text);
+}
+
+.footer-col p,
+.footer-col li,
+.footer-col a {
+  color: var(--muted);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 10px;
+}
+
+.footer-link,
+.footer-col a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #dde1ec;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom span {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .navbar,
+  .about-grid,
+  .newsletter-box {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu,
+  .nav-actions {
+    justify-content: flex-start;
+  }
+
+  .feature-grid,
+  .stats-grid,
+  .team-grid,
+  .feedback-grid,
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .partners-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-media {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .shell {
+    width: min(100% - 24px, 1200px);
+  }
+
+  .feature-grid,
+  .stats-grid,
+  .team-grid,
+  .feedback-grid,
+  .footer-grid,
+  .partners-row {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    gap: 16px 24px;
+  }
+
+  .brand {
+    min-height: 88px;
+  }
+
+  .brand-text {
+    font-size: 34px;
+  }
+
+  .about-media {
+    flex-direction: column;
+  }
+
+  .about-media-small img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .newsletter-box {
+    padding: 32px 20px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form button {
+    min-height: 52px;
+  }
+
+  .hero-banner {
+    min-height: 260px;
+  }
+
+  .hero-circle {
+    width: 120px;
+    height: 120px;
+    right: 18px;
+    top: 40px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="topbar">
+      <p>Welcome to Sland a Modern Saaslanding Template</p>
+    </div>
+
+    <div class="shell navbar">
+      <a href="#" class="brand">
+        <span class="brand-mark"></span>
+        <img
+        src="https://wpriverthemes.com/HTML/sland/assets/images/logos/logo.png"
+        alt="Newsletter Illustration"
+      >
+      </a>
+
+      <nav class="nav-menu">
+  <a href="/Home.html">Home</a>
+
+
+  <a href="/about page.html" class="active">About</a>
+
+  <a href="/Project.html">Project</a>
+
+  <a href="/Blog Page.html">Blog</a>
+
+  <!-- <a href="Page.html"></a> -->
+
+  <a href="/Service Page.html">Page</a>
+
+
+
+  
+
+  <a href="/ContactPage.html">Contact</a>
+
+
+  
+</nav>
+
+      <div class="nav-actions">
+        <a href="#" class="search-btn">🔍</a>
+        <a href="#" class="lang-btn">English</a>
+        <a href="#" class="btn btn-primary">Get Started →</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-banner">
+    <div class="hero-shape hero-circle"></div>
+    <div class="hero-shape hero-dots"></div>
+
+    <div class="shell hero-content">
+      <h1>About Us</h1>
+      <div class="breadcrumb">
+        <a href="#">Home</a>
+        <span>›</span>
+        <a href="#" class="current">About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="shell about-grid">
+      <div class="about-copy">
+        <span class="section-badge">About Company</span>
+        <h2>We Are Professional and Creative Saas Solutions</h2>
+        <p>
+          Sed ut perspiciatis unde omnis natus error voluptatem accusantium dolore
+          laudantium totam rem aperiam eaqupsa quae ainventore veritatis quas
+          architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+          quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni
+          dolores eos qui ratione voluptatem.
+        </p>
+
+        <ul class="check-list">
+          <li>30-day free trial of our premium plan</li>
+          <li>100% Free - No payments required</li>
+          <li>Lifetime Upgrade</li>
+        </ul>
+
+        <a href="#" class="btn btn-primary">Get Started →</a>
+      </div>
+
+      <div class="about-media">
+        <div class="about-media-large">
+          <img src="https://wpriverthemes.com/HTML/sland/assets/images/about/about-page.jpg" alt="Team work" />
+        </div>
+        <div class="about-media-small">
+          <img src="https://wpriverthemes.com/HTML/sland/assets/images/about/about-page-two.jpg" alt="Man working" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-features">
+    <div class="shell feature-grid">
+      <article class="feature-card">
+        <div class="feature-icon feature-purple">✔</div>
+        <span class="feature-number">01</span>
+        <h3>Track your Customers From your Website</h3>
+        <p>Sed ut perspiciatis unde omnis natus error voluptatem accusaente dolorem laudantium totam</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon feature-yellow">✔</div>
+        <span class="feature-number">02</span>
+        <h3>Understand Much Sells Performance Better</h3>
+        <p>Sed ut perspiciatis unde omnis natus error voluptatem accusaente dolorem laudantium totam</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon feature-orange">✔</div>
+        <span class="feature-number">03</span>
+        <h3>Get Feedback Live and Make Improvements</h3>
+        <p>Sed ut perspiciatis unde omnis natus error voluptatem accusaente dolorem laudantium totam</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon feature-pink">✔</div>
+        <span class="feature-number">04</span>
+        <h3>We Work Together as Our Team Member</h3>
+        <p>Sed ut perspiciatis unde omnis natus error voluptatem accusaente dolorem laudantium totam</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="stats-section">
+    <div class="shell stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">★</div>
+        <h3>250+</h3>
+        <p>Happy Clients</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⬇</div>
+        <h3>843+</h3>
+        <p>Download Apps</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏆</div>
+        <h3>965+</h3>
+        <p>Awards Winning</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <h3>753+</h3>
+        <p>Team Members</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="shell">
+      <div class="section-heading center">
+        <span class="section-badge">Expert Team Member</span>
+        <h2>Meet Our Experienced Team Members Who Completed Projects</h2>
+      </div>
+
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="team-image">
+            <img src="https://wpriverthemes.com/HTML/sland/assets/images/team/member1.png" alt="Michelle J. Tapley">
+            <button class="team-plus">+</button>
+          </div>
+          <h3>Michelle J. Tapley</h3>
+        </article>
+
+        <article class="team-card">
+          <div class="team-image">
+            <img src="https://wpriverthemes.com/HTML/sland/assets/images/team/member2.png" alt="Brenda J. Napier">
+            <button class="team-plus">+</button>
+          </div>
+          <h3>Brenda J. Napier</h3>
+        </article>
+
+        <article class="team-card">
+          <div class="team-image">
+            <img src="https://wpriverthemes.com/HTML/sland/assets/images/team/member3.png" alt="Yesenia K. Owens">
+            <button class="team-plus">+</button>
+          </div>
+          <h3>Yesenia K. Owens</h3>
+        </article>
+
+        <article class="team-card">
+          <div class="team-image">
+            <img src="https://wpriverthemes.com/HTML/sland/assets/images/team/member3.png" alt="James G. Dedrick">
+            <button class="team-plus">+</button>
+          </div>
+          <h3>James G. Dedrick</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners-section">
+    <div class="shell partners-row">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three1.png" alt="Partner 1">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three2.png" alt="Partner 2">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three3.png" alt="Partner 3">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three4.png" alt="Partner 4">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three5.png" alt="Partner 5">
+    </div>
+  </section>
+
+  <section class="feedback-section">
+    <div class="shell">
+      <div class="section-heading">
+        <span class="section-badge">Clients Feedback</span>
+        <h2>What Our Customer's Say About Solutions</h2>
+      </div>
+
+      <div class="feedback-grid">
+        <article class="feedback-card">
+          <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three1.png" alt="Client logo" class="feedback-logo">
+          <p>Sed ut perspiciatis unde omnis iste natus errors voluptatem accusantium doloremque laudantium <strong>eaque ipsa quae ab illo</strong> verita architecto beatae vitae dicta sunt explica nemo enim ipsam voluptatem quia natural aut odat aut fugit.</p>
+          <div class="feedback-user">
+            <span class="quote-mark">”</span>
+            <div>
+              <h4>Zelma K. Hall</h4>
+              <small>Senior Manager</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="feedback-card">
+          <img src="https://wpriverthemes.com/HTML/sland/assets/images/client-logos/client-logo3.png" alt="Client logo" class="feedback-logo">
+          <p>Sed ut perspiciatis unde omnis iste natus errors voluptatem accusantium doloremque laudantium <strong>eaque ipsa quae ab illo</strong> verita architecto beatae vitae dicta sunt explica nemo enim ipsam voluptatem quia natural aut odat aut fugit.</p>
+          <div class="feedback-user">
+            <span class="quote-mark">”</span>
+            <div>
+              <h4>Randall L. Hamby</h4>
+              <small>Senior Manager</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="feedback-card">
+          <img src="https://wpriverthemes.com/HTML/sland/assets/images/client-logos/client-logo2.png" alt="Client logo" class="feedback-logo">
+          <p>Sed ut perspiciatis unde omnis iste natus errors voluptatem accusantium doloremque laudantium <strong>eaque ipsa quae ab illo</strong> verita architecto beatae vitae dicta sunt explica nemo enim ipsam voluptatem quia natural aut odat aut fugit.</p>
+          <div class="feedback-user">
+            <span class="quote-mark">”</span>
+            <div>
+              <h4>Lillie R. Burkhalter</h4>
+              <small>Senior Manager</small>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <div class="shell newsletter-box">
+      <div class="newsletter-content">
+        <span class="section-badge dark">Our Newsletter</span>
+        <h2>Subscribe Our Newsletter to Get More Updates</h2>
+
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter Email Address">
+          <button type="submit">Sign up →</button>
+        </form>
+
+        <div class="newsletter-options">
+          <label><input type="radio" name="plan" checked> Wekly Updates</label>
+          <label><input type="radio" name="plan"> Monthly Updates</label>
+        </div>
+      </div>
+
+      <div class="newsletter-image">
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/newsletter/newsletter.png" alt="Newsletter illustration">
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-col">
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/logos/logo.png" alt="Sland logo" class="footer-logo">
+        <p>Sed perspiciatis unde omnis iste sit voluptatem accusante doloreue <a href="#">laudantium</a> aperiam eaque abillo inventore.</p>
+        <a href="#" class="footer-link">Read More →</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Success History</a></li>
+          <li><a href="#">Meet The Team</a></li>
+          <li><a href="#">Latest News</a></li>
+          <li><a href="#">Need a Career?</a></li>
+          <li><a href="#">Popular Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Software Solutions</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Graphics Design</a></li>
+          <li><a href="#">Application Design</a></li>
+          <li><a href="#">SEO Optimization</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>&nbsp;</h3>
+        <ul>
+          <li><a href="#">Market Analysis</a></li>
+          <li><a href="#">Digital Solutions</a></li>
+          <li><a href="#">Consultations</a></li>
+          <li><a href="#">Success Rate</a></li>
+          <li><a href="#">User Research</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <p>55 Main Street, New York</p>
+        <p>support@gmail.com</p>
+        <p>Call : +012 (345) 678</p>
+      </div>
+    </div>
+
+    <div class="shell footer-bottom">
+      <p>© 2022 <span>Sland</span>. All rights reserved</p>
+    </div>
+  </footer>
+
+</body>
+</html>

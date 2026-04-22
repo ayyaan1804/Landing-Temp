@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sland Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="header.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+  --primary: #5a38f5;
+  --primary-dark: #4a2fe5;
+  --text: #111633;
+  --muted: #636987;
+  --soft-bg: #f7f7fd;
+  --soft-border: #ecebfb;
+  --white: #ffffff;
+  --dark-surface: #252d45;
+  --shadow: 0 18px 45px rgba(24, 31, 56, 0.08);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.shell {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #efedff;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.section-badge.dark {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.section-title {
+  margin-bottom: 54px;
+}
+
+.section-title.center {
+  text-align: center;
+}
+
+.section-title h2 {
+  margin: 18px auto 0;
+  max-width: 760px;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.18;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), #6b58f7);
+  color: #fff;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-soft {
+  background: #efedff;
+  color: var(--primary);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--primary);
+}
+
+.btn-transparent {
+  border: 2px solid rgba(255,255,255,0.7);
+  color: #fff;
+  background: transparent;
+}
+
+/* header */
+.site-header {
+  position: relative;
+  z-index: 10;
+  background:
+    radial-gradient(circle at left top, rgba(255, 202, 112, 0.45), transparent 28%),
+    radial-gradient(circle at right bottom, rgba(110, 99, 255, 0.12), transparent 25%),
+    #fff;
+  border-top: 3px solid var(--primary);
+}
+
+.header-row {
+  display: grid;
+  grid-template-columns: 220px 1fr auto;
+  gap: 32px;
+  align-items: center;
+  padding: 24px 0 28px;
+  border-bottom: 1px solid #ecebfd;
+}
+
+.brand img {
+  max-height: 54px;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  color: #5f6283;
+  padding-bottom: 10px;
+}
+
+.main-nav a.active {
+  color: var(--primary);
+}
+
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 82px;
+  height: 3px;
+  background: var(--primary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.login-link {
+  color: #5f6283;
+  font-weight: 600;
+}
+
+/* hero */
+.hero-section {
+  padding: 70px 0 90px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 208, 128, 0.35), transparent 22%),
+    radial-gradient(circle at 100% 100%, rgba(104, 87, 255, 0.12), transparent 28%),
+    #fff;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-copy h1 {
+  margin: 22px 0 18px;
+  max-width: 620px;
+  font-size: clamp(42px, 6vw, 82px);
+  line-height: 1.06;
+}
+
+.hero-copy p {
+  max-width: 560px;
+  margin: 0 0 30px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.hero-form,
+.newsletter-form {
+  display: flex;
+  overflow: hidden;
+  max-width: 660px;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.hero-form input,
+.newsletter-form input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  padding: 20px 18px;
+  background: transparent;
+}
+
+.hero-form button,
+.newsletter-form button {
+  border: 0;
+  background: var(--primary);
+  color: #fff;
+  padding: 0 28px;
+  font-weight: 600;
+}
+
+.hero-options,
+.newsletter-options {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  color: #5f6283;
+  font-weight: 500;
+}
+
+.hero-media img {
+  width: 100%;
+}
+
+/* purple feature section */
+.feature-highlight {
+  padding: 100px 0;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(135deg, var(--primary), #4d32ea);
+  background-size: 16px 16px, auto;
+  color: #fff;
+}
+
+.section-title.light h2 {
+  color: #fff;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+.highlight-card {
+  text-align: center;
+  padding: 24px 22px;
+}
+
+.highlight-icon {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 28px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: var(--primary);
+  font-size: 36px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.18);
+}
+
+.highlight-card h3 {
+  margin: 0 0 18px;
+  font-size: 28px;
+}
+
+.highlight-card p {
+  margin: 0 0 24px;
+  color: rgba(255,255,255,0.9);
+  line-height: 2;
+}
+
+.highlight-card a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* about */
+.about-section {
+  padding: 100px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-content h2 {
+  margin: 18px 0 20px;
+  max-width: 560px;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.2;
+}
+
+.about-content p {
+  max-width: 620px;
+  color: var(--muted);
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 18px 40px;
+  margin-bottom: 36px;
+}
+
+.check-item {
+  position: relative;
+  padding-left: 46px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.check-item::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+/* browser */
+.browser-section {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.browser-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.browser-copy h2 {
+  margin: 18px 0 28px;
+  max-width: 560px;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.18;
+}
+
+.browser-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.browser-item h3 {
+  margin: 0 0 16px;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.browser-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.browser-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.browser-icon.purple { background: var(--primary); }
+.browser-icon.gold { background: #ffbe0b; }
+
+/* services */
+.service-grid-section {
+  padding: 90px 0;
+  background: var(--soft-bg);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 36px 34px;
+  border-radius: 12px;
+}
+
+.service-card h3 {
+  margin: 0 0 14px;
+  font-size: 24px;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 2;
+}
+
+/* dashboard */
+.dashboard-section {
+  padding: 90px 0;
+}
+
+.dashboard-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-slider img {
+  width: min(100%, 1260px);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 8px;
+  background: #17162a;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.slider-btn.left { left: 0; }
+.slider-btn.right { right: 0; }
+
+/* testimonials */
+.testimonial-section {
+  padding: 100px 0;
+  color: #fff;
+  background:
+    linear-gradient(135deg, var(--primary), #4d32ea);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.testimonial-copy h2 {
+  margin: 20px 0 22px;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.15;
+}
+
+.testimonial-copy p {
+  color: rgba(255,255,255,0.88);
+  line-height: 2;
+}
+
+.testimonial-card {
+  background: #fff;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.testimonial-card img {
+  max-height: 42px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.testimonial-card p {
+  margin: 0 0 24px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.testimonial-card strong {
+  color: var(--primary);
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.quote-mark {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: #fff;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.testimonial-user h4 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.testimonial-user small {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* partners */
+.partners-section {
+  padding: 60px 0 90px;
+}
+
+.partners-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  align-items: center;
+}
+
+.partners-row img {
+  margin: 0 auto;
+  max-height: 52px;
+  width: auto;
+}
+
+/* newsletter */
+.newsletter-section {
+  padding: 30px 0 90px;
+  background: linear-gradient(to bottom, #fff 0 50%, #f7f6fc 50% 100%);
+}
+
+.newsletter-box {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 20px;
+  align-items: center;
+  padding: 60px 70px;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 78% 58%, rgba(214, 19, 120, 0.45), transparent 22%),
+    var(--dark-surface);
+  color: #fff;
+}
+
+.newsletter-copy h2 {
+  margin: 20px 0 28px;
+  max-width: 620px;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.16;
+}
+
+.newsletter-form {
+  border: 0;
+  max-width: 640px;
+}
+
+.newsletter-form button {
+  background: linear-gradient(90deg, var(--primary), #6d59f7);
+}
+
+.newsletter-options {
+  color: rgba(255,255,255,0.9);
+}
+
+/* trial cards */
+.trial-section {
+  padding: 90px 0;
+}
+
+.trial-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.trial-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 30px 34px;
+  background: var(--soft-bg);
+  border-radius: 12px;
+}
+
+.trial-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+}
+
+.trial-card h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.trial-card a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+/* contact */
+.contact-section {
+  padding: 0 0 90px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 640px;
+  border: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px 34px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #e5e5ef;
+  outline: 0;
+  padding: 12px 0;
+  background: transparent;
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.contact-form .btn {
+  margin-top: 28px;
+}
+
+/* blog */
+.blog-section {
+  padding: 80px 0;
+  background: var(--soft-bg);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.blog-intro h2 {
+  margin: 18px 0 28px;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.18;
+}
+
+.blog-card {
+  background: #fff;
+  padding: 36px 40px;
+}
+
+.blog-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.blog-card h3 {
+  margin: 0 0 18px;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.blog-card p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.blog-card a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* CTA */
+.cta-section {
+  padding: 70px 0;
+}
+
+.cta-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 42px 48px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--primary), #4d32ea);
+  color: #fff;
+}
+
+.cta-copy h2 {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 3vw, 42px);
+}
+
+.cta-copy p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* footer */
+.site-footer {
+  padding: 90px 0 20px;
+  background: linear-gradient(
+  90deg,
+  #202742 0%,   /* dark blue */
+  #2e3458 35%,  /* bluish purple */
+  #234f49 70%,  /* teal */
+  #1c5e3a 100%  /* green */
+);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 36px;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+  width: 140px;        /* control size */
+  height: auto;
+  display: block;
+
+  /* REMOVE white background */
+  background: transparent;
+
+  /* Optional: slight brightness to match design */
+  filter: brightness(1.1);
+}
+
+.footer-col p,
+.footer-col li,
+.footer-col a {
+  color: white
+}
+
+.footer-col span {
+  color: black;
+  font-weight: 600;
+}
+
+.footer-col h3 {
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 12px;
+}
+
+.footer-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid black;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color:white;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .header-row,
+  .hero-grid,
+  .about-grid,
+  .browser-grid,
+  .testimonial-grid,
+  .newsletter-box,
+  .contact-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav,
+  .header-actions {
+    justify-content: flex-start;
+  }
+
+  .highlight-grid,
+  .service-grid,
+  .trial-cards,
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .partners-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .browser-features {
+    grid-template-columns: 1fr;
+  }
+
+  .slider-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .shell {
+    width: min(100% - 24px, 1200px);
+  }
+
+  .highlight-grid,
+  .service-grid,
+  .trial-cards,
+  .partners-row,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-form,
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .hero-form button,
+  .newsletter-form button {
+    min-height: 54px;
+  }
+
+  .check-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter-box {
+    padding: 34px 20px;
+  }
+
+  .blog-card {
+    padding: 28px 24px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="topbar">
+      <p>Welcome to Sland a Modern Saaslanding Template</p>
+    </div>
+
+    <div class="shell navbar">
+      <a href="#" class="brand">
+        <span class="brand-mark"></span>
+        <img
+        src="https://wpriverthemes.com/HTML/sland/assets/images/logos/logo.png"
+        alt="Newsletter Illustration"
+      >
+      </a>
+
+      <nav class="nav-menu">
+  <a href="/Home.html" class="active">Home</a>
+
+
+  <a href="/about page.html">About</a>
+
+  <a href="/Project.html">Project</a>
+
+  <a href="/Blog Page.html">Blog</a>
+
+  <!-- <a href="Page.html"></a> -->
+
+  <a href="/Service Page.html">Page</a>
+
+
+
+  
+
+  <a href="/ContactPage.html">Contact</a>
+
+
+  
+</nav>
+
+      <div class="nav-actions">
+        <a href="#" class="search-btn">🔍</a>
+        <a href="#" class="lang-btn">English</a>
+        <a href="#" class="btn btn-primary">Get Started →</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <span class="section-badge">Our Special Solutions</span>
+        <h1>We're Advanced analytics software solutions</h1>
+        <p>
+          Sit amet consectetur adipiscing elit seddo eiusmod tempode dunt ut labore
+          et dolore magna aliqua suspendisse
+        </p>
+
+        <form class="hero-form">
+          <input type="email" placeholder="Enter Email Address">
+          <button type="submit">Get Free Trial →</button>
+        </form>
+
+        <div class="hero-options">
+          <label><input type="radio" name="hero-plan" checked> Wekly Updates</label>
+          <label><input type="radio" name="hero-plan"> Monthly Updates</label>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/hero/hero-three.jpg" alt="Dashboard preview">
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-highlight">
+    <div class="shell">
+      <div class="section-title center light">
+        <span class="section-badge dark">Our Special Solutions</span>
+        <h2>We Customize Your Software to The Smart Ways</h2>
+      </div>
+
+      <div class="highlight-grid">
+        <article class="highlight-card">
+          <div class="highlight-icon">◉</div>
+          <h3>Software Model</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque</p>
+          <a href="#">Learn More →</a>
+        </article>
+
+        <article class="highlight-card">
+          <div class="highlight-icon">⌘</div>
+          <h3>Network Wired</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque</p>
+          <a href="#">Learn More →</a>
+        </article>
+
+        <article class="highlight-card">
+          <div class="highlight-icon">🛡</div>
+          <h3>Final Testylization</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque</p>
+          <a href="#">Learn More →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="shell about-grid">
+      <div class="about-image">
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/about/about-two.png" alt="Landing illustration">
+      </div>
+
+      <div class="about-content">
+        <span class="section-badge">Our Special Solutions</span>
+        <h2>Use Landingly to Create Amazing Landing Pages</h2>
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error voluptatem accusan tium
+          doloremque laudantium totam rem aperiam eaque quae ainvtore veritatis et
+          quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+          voluptatem quia voluptas sit aspernatur
+        </p>
+
+        <div class="check-grid">
+          <div class="check-item">Customers Website</div>
+          <div class="check-item">Software Doct</div>
+        </div>
+
+        <a href="#" class="btn btn-outline">Get Started →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="browser-section">
+    <div class="shell browser-grid">
+      <div class="browser-copy">
+        <span class="section-badge">Browser Support</span>
+        <h2>We Build Into Your Favorite Web Browser Support</h2>
+
+        <div class="browser-features">
+          <article class="browser-item">
+            <div class="browser-icon purple">✓</div>
+            <h3>Track your Customers From your Website</h3>
+            <p>Sed ut perspiciatis unde omnis natus error voluptatem accusaente laudantium totam</p>
+          </article>
+
+          <article class="browser-item">
+            <div class="browser-icon gold">✓</div>
+            <h3>Understand Much Sells Performance Better</h3>
+            <p>Sed ut perspiciatis unde omnis natus error voluptatem accusaente laudantium totam</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="browser-image">
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/about/borwser-support.jpg" alt="Browser support">
+      </div>
+    </div>
+  </section>
+
+  <section class="service-grid-section">
+    <div class="shell">
+      <div class="section-title center">
+        <span class="section-badge">Our Special Solutions</span>
+        <h2>We Customize Your Software to The Smart Ways</h2>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>Well Organization</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam</p>
+        </article>
+        <article class="service-card">
+          <h3>Responsive Design</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam</p>
+        </article>
+        <article class="service-card">
+          <h3>Heigh Security</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam</p>
+        </article>
+        <article class="service-card">
+          <h3>Creative Design</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam</p>
+        </article>
+        <article class="service-card">
+          <h3>Clean Development</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam</p>
+        </article>
+        <article class="service-card">
+          <h3>Advanced Analytics</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard-section">
+    <div class="shell">
+      <div class="section-title center">
+        <span class="section-badge">Dashboard Screenshot</span>
+        <h2>Let's See Awesome Software UI Design Screenshot</h2>
+      </div>
+
+      <div class="dashboard-slider">
+        <button class="slider-btn left">←</button>
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/dashboard-screenshots/dashboard-screenshot3.jpg" alt="Dashboard screenshot">
+        <button class="slider-btn right">→</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <div class="shell testimonial-grid">
+      <div class="testimonial-copy">
+        <span class="section-badge dark">Clients Feedback</span>
+        <h2>What Our Customer's Say About Us</h2>
+        <p>
+          Sed ut perspiciatis unde omnis natus error voluptatem accusantium
+          doloremque laudantium totam rem aperias eaque quae ainvtore veritatis
+          et quasi architecto beatae vitae dicta sunt explicabo enim spsam
+        </p>
+      </div>
+
+      <article class="testimonial-card">
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/client-logos/client-logo3.png" alt="Duragas">
+        <p>
+          Sed ut perspiciatis unde omniste natus errors voluptatem accusantium doloreue
+          laudantium <strong>eaque ipsaue abtore</strong> verita architecto beatae vitae dicta.
+        </p>
+        <div class="testimonial-user">
+          <span class="quote-mark">”</span>
+          <div>
+            <h4>Randall L. Hamby</h4>
+            <small>Senior Manager</small>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/client-logos/client-logo2.png" alt="Turbologo">
+        <p>
+          Sed ut perspiciatis unde omniste natus errors voluptatem accusantium doloreue
+          laudantium <strong>eaque ipsaue abtore</strong> verita architecto beatae vitae dicta.
+        </p>
+        <div class="testimonial-user">
+          <span class="quote-mark">”</span>
+          <div>
+            <h4>Lillie R. Burkhalter</h4>
+            <small>Senior Manager</small>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="partners-section">
+    <div class="shell partners-row">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three1.png" alt="Partner 1">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three2.png" alt="Partner 2">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three3.png" alt="Partner 3">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three4.png" alt="Partner 4">
+      <img src="https://wpriverthemes.com/HTML/sland/assets/images/partners/partner-three5.png" alt="Partner 5">
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <div class="shell newsletter-box">
+      <div class="newsletter-copy">
+        <span class="section-badge dark">Our Newsletter</span>
+        <h2>Subscribe Our Newsletter to Get More Updates</h2>
+
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter Email Address">
+          <button type="submit">Sign up ›</button>
+        </form>
+
+        <div class="newsletter-options">
+          <label><input type="radio" name="newsletter" checked> Wekly Updates</label>
+          <label><input type="radio" name="newsletter"> Monthly Updates</label>
+        </div>
+      </div>
+
+      <div class="newsletter-image">
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/newsletter/newsletter-two.png" alt="Newsletter illustration">
+      </div>
+    </div>
+  </section>
+
+  <section class="trial-section">
+    <div class="shell">
+      <div class="section-title center">
+        <span class="section-badge">Get Free 7 Days Trial</span>
+        <h2>Contact Us to Get Your 7days Free Trial Version</h2>
+      </div>
+
+      <div class="trial-cards">
+        <article class="trial-card">
+          <div class="trial-icon">✉</div>
+          <div>
+            <h3>Email Us</h3>
+            <a href="mailto:support@gmail.com">support@gmail.com</a>
+          </div>
+        </article>
+
+        <article class="trial-card">
+          <div class="trial-icon">✆</div>
+          <div>
+            <h3>Phone</h3>
+            <a href="tel:+0123456789">+012 (345) 67 89</a>
+          </div>
+        </article>
+
+        <article class="trial-card">
+          <div class="trial-icon">⌖</div>
+          <div>
+            <h3>Address</h3>
+            <a href="#">55 Main Street, USA</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="shell contact-grid">
+      <div class="contact-map">
+        <iframe src="https://www.google.com/maps?q=New+York&output=embed"></iframe>
+      </div>
+
+      <div class="contact-form-wrap">
+        <form class="contact-form">
+          <div class="form-grid">
+            <div class="field"><label>Full Name</label><input type="text"></div>
+            <div class="field"><label>Email Address</label><input type="email"></div>
+            <div class="field"><label>Phone Number</label><input type="text"></div>
+            <div class="field"><label>Company</label><input type="text"></div>
+            <div class="field"><label>Subject</label><input type="text"></div>
+            <div class="field"><label>Website</label><input type="text"></div>
+            <div class="field full"><label>Message</label><textarea></textarea></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Get Free Trial →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="shell blog-grid">
+      <div class="blog-intro">
+        <span class="section-badge">Latest News & Blog</span>
+        <h2>Get Our Every Single Update Latest News and Blog</h2>
+        <a href="#" class="btn btn-outline">View More News →</a>
+      </div>
+
+      <article class="blog-card">
+        <div class="blog-meta">
+          <span>📅 25 March 2022</span>
+          <span>💬 Com (5)</span>
+        </div>
+        <h3>Smashin Podcast Episode Web Frameworks Solve Vanilla</h3>
+        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized the charms of pleasure</p>
+        <a href="#">Read More →</a>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-meta">
+          <span>📅 25 March 2022</span>
+          <span>💬 Com (5)</span>
+        </div>
+        <h3>Designing Better Links Websites And Emails A Guideline</h3>
+        <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized the charms of pleasure</p>
+        <a href="#">Read More →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="shell cta-box">
+      <div class="cta-copy">
+        <h2>Have Any Help to Saas Solutions?</h2>
+        <p>Professional service for your software solutions</p>
+      </div>
+
+      <div class="cta-actions">
+        <a href="#" class="btn btn-white">Get Started →</a>
+        <a href="#" class="btn btn-transparent">Learn More →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div class="footer-col">
+        <img src="https://wpriverthemes.com/HTML/sland/assets/images/logos/logo-footer.png" 
+       alt="Sland logo" 
+       class="footer-logo">
+        <p>
+          Sed perspiciatis unde omnis istee sit voluptatem accusante doloreue
+          <span>laudantium</span> aperiam eaque abillo inventore
+        </p>
+        <a href="#" class="footer-link">Read More →</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Success History</a></li>
+          <li><a href="#">Meet The Team</a></li>
+          <li><a href="#">Latest News</a></li>
+          <li><a href="#">Need a Career?</a></li>
+          <li><a href="#">Popular Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Software Solutions</a></li>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Graphics Design</a></li>
+          <li><a href="#">Application Design</a></li>
+          <li><a href="#">SEO Optimization</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <ul class="contact-list">
+          <li>📍 55 Main Street, New York</li>
+          <li>✉ support@gmail.com</li>
+          <li>📞 Call : +012 (345) 678</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="shell footer-bottom">
+      <p>© 2022 Sland. All rights reserved</p>
+    </div>
+  </footer>
+
+</body>
+</html>
